@@ -5,7 +5,6 @@ import ProfileInfo from './components/ProfileInfo';
 
 
 
-
 function App() {
 
   return (

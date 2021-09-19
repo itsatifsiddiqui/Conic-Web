@@ -10,7 +10,10 @@ export default class FirestoreService {
 
     const docSnap = await getDoc(docRef);
 
-    return docSnap.data();
+    if (docSnap.exists()) {
+      return docSnap.data();
+    }
 
+    return this.getUserData('eAX6MMLmSIh1TRrO65DaZGo5jXU2');
   }
 }
