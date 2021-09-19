@@ -17,8 +17,9 @@ function ProfileInfo() {
     console.info("USEEFFECT CALLED");
     async function singInUser() {
       await AuthService.signInUser();
-      const splittedUrl = window.location.href.split('/');
-      const userId = splittedUrl[splittedUrl.length - 1];
+      const urlString = window.location.href;
+      const url = new URL(urlString);
+      const userId = url.searchParams.get('userid') ?? 'eAX6MMLmSIh1TRrO65DaZGo5jXU2';
       const user = await FirestoreService.getUserData(userId);
       setUser(user);
     }
